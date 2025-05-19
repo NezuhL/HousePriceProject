@@ -18,16 +18,16 @@ print(f"size data \n , {house_data.shape} \n ,the 5 first lines: \n , {house_dat
 # Part 1 cleaning data:
 
 # checking for missing values
-a = house_data.isnull().any()  # האם קיימים ערכים חסרים פר עמודה
-total_missing = house_data.isnull().sum().sum()  # סכום הערכים הכולל חסרים בכל עמודה
+a = house_data.isnull().any()  
+total_missing = house_data.isnull().sum().sum()  
 size_data = house_data.size
 missing_percent = (total_missing / size_data) * 100
 print(f"the present of the missing data: {missing_percent:.2f}%")
 # checking the distribution of missing values
 column_missing_data = house_data.isnull().sum()
-missing_percent_column = (column_missing_data / len(house_data)) * 100  # אחוז הערכים החסרים
+missing_percent_column = (column_missing_data / len(house_data)) * 100  
 missing_info = pd.DataFrame({'missing_values': column_missing_data, 'percent': missing_percent_column})
-missing_info = missing_info[missing_info['missing_values'] > 0]  # סינון ערכים שאין בהם חוסר
+missing_info = missing_info[missing_info['missing_values'] > 0] 
 print(missing_info)
 
 # Deleting missing data:
